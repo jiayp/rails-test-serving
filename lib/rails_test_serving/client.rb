@@ -31,7 +31,7 @@ module RailsTestServing
       handle_process_lifecycle do
         server = DRbObject.new_with_uri(RailsTestServing.service_uri)
         begin
-          puts(server.run($0, ARGV))
+          puts(server.run(ARGV[0], ARGV[1..-1]))
         rescue DRb::DRbConnError
           raise ServerUnavailable
         end

@@ -1,7 +1,7 @@
 require 'pathname'
 require 'thread'
 require 'test/unit'
-require 'drb/unix'
+require 'drb'
 require 'stringio'
 require 'benchmark'
 
