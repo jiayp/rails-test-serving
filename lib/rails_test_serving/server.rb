@@ -66,23 +66,23 @@ module RailsTestServing
         end
       end
 
-      log " - CTRL+Z: Reset database column information cache\n"
-      trap(:TSTP) do
-        GUARD.synchronize do
-          log "** Resetting database column information cache..." do
-            ActiveRecord::Base.instance_eval { subclasses }.each { |c| c.reset_column_information }
-          end
-        end
-      end
+#      log " - CTRL+Z: Reset database column information cache\n"
+#      trap(:TSTP) do
+#        GUARD.synchronize do
+#          log "** Resetting database column information cache..." do
+#            ActiveRecord::Base.instance_eval { subclasses }.each { |c| c.reset_column_information }
+#          end
+#        end
+#      end
 
-      log " - CTRL+`: Reset lazy-loaded constants\n"
-      trap(:QUIT) do
-        GUARD.synchronize do
-          log "** Resetting lazy-loaded constants..." do
-            (defined?(ActiveSupport::Dependencies) ? ActiveSupport::Dependencies : Dependencies).clear
-          end
-        end
-      end
+#      log " - CTRL+`: Reset lazy-loaded constants\n"
+#      trap(:QUIT) do
+#        GUARD.synchronize do
+#          log "** Resetting lazy-loaded constants..." do
+#            (defined?(ActiveSupport::Dependencies) ? ActiveSupport::Dependencies : Dependencies).clear
+#          end
+#        end
+#      end
     end
 
     def perform_run(file, argv)
