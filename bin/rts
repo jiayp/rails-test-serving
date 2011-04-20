@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'rails_test_serving'
+require 'rails_test_serving/bootstrap'
+require 'rails_test_serving/server'
+require 'rails_test_serving/client'
+require 'rails_test_serving/cleaner'
+require 'rails_test_serving/constant_management'
+require 'rails_test_serving/utilities'
+
+RailsTestServing.start_server

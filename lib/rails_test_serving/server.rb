@@ -18,7 +18,7 @@ module RailsTestServing
         perform_run(file, argv)
       end
     end
-  
+
     def prepare
       PREPARATION_GUARD.synchronize do
         @prepared ||= begin
@@ -33,21 +33,16 @@ module RailsTestServing
         end
       end
     end
-    
+
   private
 
     def enable_dependency_tracking
-      require 'config/boot'
+      require 'config/application'
 
-      Rails::Configuration.class_eval do
-        unless method_defined? :cache_classes
-          raise "#{self.class} out of sync with current Rails version"
-        end
-
-        def cache_classes
-          false
-        end
-      end
+      Rails.configuration.instance_eval("
+      def cache_classes
+        false
+      end")
     end
 
     def start_cleaner

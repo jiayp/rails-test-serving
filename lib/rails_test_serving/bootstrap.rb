@@ -46,8 +46,6 @@ module RailsTestServing
       @active
     end
 
-  private
-
     def start_server
       @active = true
       Server.start

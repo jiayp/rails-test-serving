@@ -53,11 +53,6 @@ module RailsTestServing
     end
 
     def clean_up_app
-      if ActionController::Dispatcher.respond_to?(:cleanup_application)
-        ActionController::Dispatcher.cleanup_application
-      else
-        ActionController::Dispatcher.new(StringIO.new).cleanup_application
-      end
       if defined?(Fixtures) && Fixtures.respond_to?(:reset_cache)
         Fixtures.reset_cache
       end
@@ -77,11 +72,8 @@ module RailsTestServing
     end
 
     def reload_app
-      if ActionController::Dispatcher.respond_to?(:reload_application)
-        ActionController::Dispatcher.reload_application
-      else
-        ActionController::Dispatcher.new(StringIO.new).reload_application
-      end
+      ActiveSupport::DescendantsTracker.clear
+      ActiveSupport::Dependencies.clear
     end
 
     def reload_specified_source_files
