@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email = %q{jiayp@gmail.com}
   s.extra_rdoc_files = ["lib/rails_test_serving/bootstrap.rb", "lib/rails_test_serving/cleaner.rb", "lib/rails_test_serving/client.rb", "lib/rails_test_serving/constant_management.rb", "lib/rails_test_serving/server.rb", "lib/rails_test_serving/utilities.rb", "lib/rails_test_serving.rb", "LICENSE", "README.mdown"]
   s.files = ["bin/rts", "bin/rtc", "bin/wrts.bat", "bin/wrtc.bat", "lib/rails_test_serving/bootstrap.rb", "lib/rails_test_serving/cleaner.rb", "lib/rails_test_serving/client.rb", "lib/rails_test_serving/constant_management.rb", "lib/rails_test_serving/server.rb", "lib/rails_test_serving/utilities.rb", "lib/rails_test_serving.rb", "LICENSE", "Manifest", "Rakefile", "README.mdown", "test/rails_test_serving/bootstrap_test.rb", "test/rails_test_serving/cleaner_test.rb", "test/rails_test_serving/client_test.rb", "test/rails_test_serving/constant_management_test.rb", "test/rails_test_serving/server_test.rb", "test/rails_test_serving/utilities_test.rb", "test/test_helper.rb", "rails-test-serving.gemspec"]
-  s.executables = ["rts", "rtc", "rtc.bat", "rts.bat"]
+  s.executables = ["rts", "rtc", "wrtc.bat", "wrts.bat"]
   s.has_rdoc = true
   s.homepage = %q{https://github.com/jiayp/rails-test-serving}
   s.rdoc_options = ["--main", "README.mdown", "--inline-source", "--line-numbers", "--charset", "UTF-8"]
